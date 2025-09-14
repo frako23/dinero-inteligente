@@ -1,990 +1,453 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinero Inteligente - Podcast de Finanzas Personales | Carla y Kesling</title>
-    <meta name="description" content="Únete a la comunidad que sí habla de dinero. Escucha el podcast Dinero Inteligente, aprende sobre cripto con Bitcoin Café y transforma tu relación con el dinero.">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-green: #7CB342;
-            --dark-green: #558B2F;
-            --primary-purple: #2D1B69;
-            --light-purple: #9C27B0;
-            --accent-yellow: #FFC107;
-            --white: #FFFFFF;
-            --light-gray: #F5F5F5;
-            --dark-gray: #333333;
-        }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 3px solid var(--primary-green);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(45, 27, 105, 0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        .logo-text {
-            font-family: 'Fredoka One', cursive;
-            font-size: 24px;
-            color: var(--primary-purple);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-purple);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-green);
-        }
-
-        .cta-button {
-            background: linear-gradient(45deg, var(--primary-green), var(--dark-green));
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(124, 179, 66, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(124, 179, 66, 0.4);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 120px 0 80px;
-            background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 50%, #f0f4ff 100%);
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-text {
-            text-align: left;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            background: var(--accent-yellow);
-            color: var(--primary-purple);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 3.2rem;
-            color: var(--primary-purple);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero .highlight {
-            color: var(--primary-green);
-            position: relative;
-        }
-
-        .hero .community-tag {
-            color: var(--light-purple);
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--dark-gray);
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, var(--primary-green), var(--dark-green));
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 16px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(124, 179, 66, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-purple);
-            padding: 15px 30px;
-            border: 2px solid var(--primary-purple);
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 16px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(124, 179, 66, 0.4);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-purple);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .platform-links {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .platform-links a {
-            color: var(--primary-purple);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .platform-links a:hover {
-            color: var(--primary-green);
-        }
-
-        .hero-image {
-            position: relative;
-            text-align: center;
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(45, 27, 105, 0.2);
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-white {
-            background: white;
-        }
-
-        .section-light {
-            background: linear-gradient(135deg, #f8fffe 0%, #f0f8e8 100%);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.5rem;
-            color: var(--primary-purple);
-            margin-bottom: 20px;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--dark-gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* What is Dinero Inteligente */
-        .what-is {
-            text-align: center;
-        }
-
-        .what-is h2 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.5rem;
-            color: var(--primary-purple);
-            margin-bottom: 30px;
-        }
-
-        .what-is .subtitle {
-            font-size: 1.3rem;
-            color: var(--primary-green);
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        .what-is p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .feature-item {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(45, 27, 105, 0.1);
-            text-align: left;
-        }
-
-        .feature-item h4 {
-            color: var(--primary-green);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        /* Purpose Section */
-        .purpose {
-            background: linear-gradient(45deg, var(--primary-purple), var(--light-purple));
-            color: white;
-            text-align: center;
-        }
-
-        .purpose h2 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        .purpose p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .purpose .highlight-text {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent-yellow);
-            margin: 30px 0;
-        }
-
-        /* Hosts Section */
-        .hosts {
-            text-align: center;
-        }
-
-        .hosts-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hosts h2 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.5rem;
-            color: var(--primary-purple);
-            margin-bottom: 20px;
-        }
-
-        .hosts-names {
-            font-size: 1.5rem;
-            color: var(--primary-green);
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .hosts p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        /* Topics Section */
-        .topics {
-            background: white;
-        }
-
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .topic-card {
-            background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid var(--primary-green);
-            transition: transform 0.3s ease;
-        }
-
-        .topic-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .topic-card h4 {
-            color: var(--primary-purple);
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .topic-card p {
-            color: var(--dark-gray);
-        }
-
-        /* Bitcoin Cafe Section */
-        .bitcoin-cafe {
-            background: linear-gradient(135deg, var(--accent-yellow) 0%, #FFD54F 100%);
-            color: var(--primary-purple);
-        }
-
-        .bitcoin-cafe h2 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .bitcoin-cafe .subtitle {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        .bitcoin-cafe p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        .exclusive-code {
-            background: var(--primary-purple);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .exclusive-code h3 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .code {
-            background: var(--accent-yellow);
-            color: var(--primary-purple);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            display: inline-block;
-            margin: 10px 0;
-        }
-
-        .cafe-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .cafe-feature {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .cafe-quote {
-            background: var(--primary-purple);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
-            font-style: italic;
-        }
-
-        .cafe-quote .quote-text {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .cafe-quote .quote-author {
-            font-weight: 700;
-            color: var(--accent-yellow);
-        }
-
-        /* Newsletter Section */
-        .newsletter {
-            background: linear-gradient(45deg, var(--primary-green), var(--dark-green));
-            color: white;
-            text-align: center;
-        }
-
-        .newsletter h2 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .newsletter p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-
-        .newsletter-form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            min-width: 250px;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 25px;
-            font-size: 16px;
-            outline: none;
-        }
-
-        .newsletter-form button {
-            background: var(--primary-purple);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .newsletter-form button:hover {
-            background: var(--light-purple);
-        }
-
-        /* Social Links */
-        .social-section {
-            background: white;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            color: var(--primary-purple);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-green);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-purple);
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h4 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--accent-yellow);
-        }
-
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--primary-green);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .topics-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cafe-features {
-                grid-template-columns: 1fr;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .newsletter-form input {
-                min-width: 100%;
-            }
-
-            .social-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Dinero Inteligente - Podcast de finanzas sin tabúes | Carla y Kesling
+    </title>
+    <meta
+      name="description"
+      content="Únete a la comunidad que sí habla de dinero. Escucha el podcast Dinero Inteligente, aprende sobre cripto con Bitcoin Café y transforma tu relación con el dinero."
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <nav class="container">
-            <div class="logo">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-08-07%20a%20las%2010.17.11_88d03a65.jpg-uqDw3bquOVJY2kOGKT93IoikJRV4bD.jpeg" alt="Dinero Inteligente Logo">
-                <a href="#" class="logo-text">Dinero Inteligente</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#episodios">Episodios</a></li>
-                <li><a href="#anfitrionas">Anfitrionas</a></li>
-                <li><a href="#bitcoin-cafe">☕ Bitcoin Café</a></li>
-                <li><a href="#contacto" class="cta-button">Agenda Asesoría</a></li>
-            </ul>
-        </nav>
+      <nav class="container">
+        <div class="logo">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-08-07%20a%20las%2010.17.11_88d03a65.jpg-uqDw3bquOVJY2kOGKT93IoikJRV4bD.jpeg"
+            alt="Dinero Inteligente Logo"
+          />
+          <a href="#" class="logo-text">Dinero Inteligente</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#episodios">Episodios</a></li>
+          <li><a href="#anfitrionas">Anfitrionas</a></li>
+          <li><a href="#bitcoin-cafe">☕ Bitcoin Café</a></li>
+          <li>
+            <a href="#contacto" class="cta-button" style="color: white"
+              >Agenda Asesoría</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        ✨ Tu relación con el dinero está a punto de cambiar
-                    </div>
-                    <span class="community-tag">Bienvenido a la comunidad de #LosQueSíHablanDeDinero</span>
-                    <h1>
-                        Este es el podcast donde <span class="highlight">rompemos el silencio financiero</span>
-                    </h1>
-                    <p>
-                        Sin tabúes, sin fórmulas mágicas y sin miedo. Carla y Kesling te acompañan en el camino hacia una libertad financiera real: la que se construye paso a paso, desde donde estás.
-                    </p>
-                    <div class="platform-links">
-                        <span>🔔 Escúchanos en</span>
-                        <a href="#">Spotify</a>
-                        <span>|</span>
-                        <span>📺 Míranos en</span>
-                        <a href="#">YouTube</a>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#" class="btn-primary">Ver Episodios</a>
-                        <a href="#" class="btn-secondary">Agenda una asesoría</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-08-07%20a%20las%2010.15.06_a3c60fec.jpg-CHrdWKA3MCwNbQuXqvyCNQXZpEOhkv.jpeg" alt="Dinero Inteligente Podcast">
-                </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              ✨ Tu relación con el dinero está a punto de cambiar
             </div>
+            <span class="community-tag"
+              >Bienvenido a la comunidad de #LosQueSíHablanDeDinero</span
+            >
+            <h1>
+              Este es el podcast donde
+              <span class="highlight">rompemos el silencio financiero</span>
+            </h1>
+            <p>
+              Sin tabúes, sin fórmulas mágicas y sin miedo. Carla y Kesling te
+              acompañan en el camino hacia una libertad financiera real: la que
+              se construye paso a paso, desde donde estás.
+            </p>
+            <div class="platform-links">
+              <span>🔔 Escúchanos en</span>
+              <a href="#">Spotify</a>
+              <span>|</span>
+              <span>📺 Míranos en</span>
+              <a href="#">YouTube</a>
+            </div>
+            <div class="hero-buttons">
+              <a href="#" class="btn-primary">Ver Episodios</a>
+              <a href="#" class="btn-primary">Agenda una asesoría</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-08-07%20a%20las%2010.15.06_a3c60fec.jpg-CHrdWKA3MCwNbQuXqvyCNQXZpEOhkv.jpeg"
+              alt="Dinero Inteligente Podcast"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- What is Dinero Inteligente -->
     <section class="section section-white">
-        <div class="container">
-            <div class="what-is">
-                <h2>❓ ¿Qué es Dinero Inteligente?</h2>
-                <p class="subtitle">Dinero Inteligente no es solo un podcast.</p>
-                <p>Es el punto de encuentro de #LosQueSíHablanDeDinero.</p>
-                <p>Es una herramienta educativa, una guía emocional y una comunidad en expansión que te ayuda a tomar decisiones claras con tu dinero, sin culpa ni complicaciones.</p>
-                
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <h4>✅ Conversaciones reales sobre dinero</h4>
-                        <p>Sin filtros ni juicios, hablamos de lo que realmente importa</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>✅ Herramientas prácticas</h4>
-                        <p>Para organizar, ahorrar, proteger e invertir tu dinero</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>✅ Invitados que inspiran</h4>
-                        <p>Expertos que suman valor y comparten experiencias reales</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>✅ Acompañamiento profesional</h4>
-                        <p>Con asesoría real y personalizada para tu situación</p>
-                    </div>
-                </div>
-                
-                <p><strong>🎧 Publicamos 2 episodios al mes llenos de contenido práctico, humano y accionable.</strong></p>
-                <a href="#" class="btn-primary" style="margin-top: 30px;">Empieza a escucharnos</a>
+      <div class="container">
+        <div class="what-is">
+          <h2>❓ ¿Qué es Dinero Inteligente?</h2>
+          <p class="subtitle">Dinero Inteligente no es solo un podcast.</p>
+          <p>Es el punto de encuentro de #LosQueSíHablanDeDinero.</p>
+          <p>
+            Es una herramienta educativa, una guía emocional y una comunidad en
+            expansión que te ayuda a tomar decisiones claras con tu dinero, sin
+            culpa ni complicaciones.
+          </p>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <h4>✅ Conversaciones reales sobre dinero</h4>
+              <p>
+                Sin filtros ni juicios, hablamos de lo que realmente importa
+              </p>
             </div>
+            <div class="feature-item">
+              <h4>✅ Herramientas prácticas</h4>
+              <p>Para organizar, ahorrar, proteger e invertir tu dinero</p>
+            </div>
+            <div class="feature-item">
+              <h4>✅ Invitados que inspiran</h4>
+              <p>Expertos que suman valor y comparten experiencias reales</p>
+            </div>
+            <div class="feature-item">
+              <h4>✅ Acompañamiento profesional</h4>
+              <p>Con asesoría real y personalizada para tu situación</p>
+            </div>
+          </div>
+
+          <p>
+            <strong
+              >🎧 Publicamos 2 episodios al mes llenos de contenido práctico,
+              humano y accionable.</strong
+            >
+          </p>
+          <a href="#" class="btn-primary" style="margin-top: 30px"
+            >Empieza a escucharnos</a
+          >
         </div>
+      </div>
     </section>
 
     <!-- Purpose Section -->
     <section class="section purpose">
-        <div class="container">
-            <h2>📈 Nuestro Propósito</h2>
-            <p>Queremos que pierdas el miedo a ver tus números.</p>
-            <p>Queremos que hablar de dinero deje de ser un tabú.</p>
-            <p>Y queremos que te sientas parte de una comunidad que entiende que planificar no es un lujo, es una estrategia para quienes quieren construir bienestar sin renunciar al presente.</p>
-            
-            <div class="highlight-text">
-                Nuestro objetivo es ayudarte a pasar del caos financiero a la claridad.
-            </div>
-            
-            <p><strong>Piensa diferente. Piensa en Dinero Inteligente.</strong></p>
-            <p><strong>Súmate a #LosQueSíHablanDeDinero</strong></p>
+      <div class="container">
+        <h2>📈 Nuestro Propósito</h2>
+        <p>Queremos que pierdas el miedo a ver tus números.</p>
+        <p>Queremos que hablar de dinero deje de ser un tabú.</p>
+        <p>
+          Y queremos que te sientas parte de una comunidad que entiende que
+          planificar no es un lujo, es una estrategia para quienes quieren
+          construir bienestar sin renunciar al presente.
+        </p>
+
+        <div class="highlight-text">
+          Nuestro objetivo es ayudarte a pasar del caos financiero a la
+          claridad.
         </div>
+
+        <p><strong>Piensa diferente. Piensa en Dinero Inteligente.</strong></p>
+        <p><strong>Súmate a #LosQueSíHablanDeDinero</strong></p>
+      </div>
     </section>
 
     <!-- Hosts Section -->
     <section class="section section-light" id="anfitrionas">
-        <div class="container">
-            <div class="hosts">
-                <h2>👤 Conoce a tus Anfitrionas</h2>
-                <div class="hosts-content">
-                    <div class="hosts-names">Carla Loyo y Kesling García</div>
-                    <p>Abogadas, asesoras financieras y fundadoras de esta comunidad que educa, inspira y transforma.</p>
-                    <p>• Creadoras del ecosistema @PlanificaconCarla_ y @TuPlanificadorafinanciera</p>
-                    <p>• Desarrollan una app de finanzas personales para acompañarte con tecnología</p>
-                    <p>• Voceras de la protección financiera con propósito</p>
-                    <a href="#" class="btn-primary" style="margin-top: 30px;">Agenda tu asesoría personalizada</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="hosts">
+          <h2>👤 Conoce a tus Anfitrionas</h2>
+          <div class="hosts-content">
+            <div class="hosts-names">Carla Loyo y Kesling García</div>
+            <p>
+              Abogadas, asesoras financieras y fundadoras de esta comunidad que
+              educa, inspira y transforma.
+            </p>
+            <p>
+              • Creadoras del ecosistema @PlanificaconCarla_ y
+              @TuPlanificadorafinanciera
+            </p>
+            <p>
+              • Desarrollan una app de finanzas personales para acompañarte con
+              tecnología
+            </p>
+            <p>• Voceras de la protección financiera con propósito</p>
+            <a href="#" class="btn-primary" style="margin-top: 30px"
+              >Agenda tu asesoría personalizada</a
+            >
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Topics Section -->
     <section class="section topics">
-        <div class="container">
-            <div class="section-header">
-                <h2>🎧 ¿De qué hablamos?</h2>
-                <p>En Dinero Inteligente respondemos lo que tú realmente quieres preguntar sobre dinero. Sin filtros. Sin juicios. Sin fórmulas mágicas.</p>
-            </div>
-            
-            <div class="topics-grid">
-                <div class="topic-card">
-                    <h4>Mentalidad financiera</h4>
-                    <p>Libérate de la culpa y transforma tu relación con el dinero</p>
-                </div>
-                <div class="topic-card">
-                    <h4>Ingresos pasivos</h4>
-                    <p>Gana más sin perder tu vida ni tu tiempo</p>
-                </div>
-                <div class="topic-card">
-                    <h4>Inteligencia financiera</h4>
-                    <p>Ahorra e invierte con confianza y estrategia</p>
-                </div>
-                <div class="topic-card">
-                    <h4>Dinero y emociones</h4>
-                    <p>Rompe el silencio y habla abiertamente de finanzas</p>
-                </div>
-                <div class="topic-card">
-                    <h4>Tecnología y finanzas</h4>
-                    <p>Digitalízate con propósito y aprovecha las herramientas</p>
-                </div>
-                <div class="topic-card">
-                    <h4>Retiro y futuro</h4>
-                    <p>Planea la vida tranquila que mereces</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <p><strong>🎧 Aquí no hay temas prohibidos. Solo conversaciones reales que te acercan a una vida financiera más libre y con propósito.</strong></p>
-                <a href="#" class="btn-primary" style="margin-top: 20px;">Explora todos los temas</a>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>🎧 ¿De qué hablamos?</h2>
+          <p>
+            En Dinero Inteligente respondemos lo que tú realmente quieres
+            preguntar sobre dinero. Sin filtros. Sin juicios. Sin fórmulas
+            mágicas.
+          </p>
         </div>
+
+        <div class="topics-grid">
+          <div class="topic-card">
+            <h4>Mentalidad financiera</h4>
+            <p>Libérate de la culpa y transforma tu relación con el dinero</p>
+          </div>
+          <div class="topic-card">
+            <h4>Ingresos pasivos</h4>
+            <p>Gana más sin perder tu vida ni tu tiempo</p>
+          </div>
+          <div class="topic-card">
+            <h4>Inteligencia financiera</h4>
+            <p>Ahorra e invierte con confianza y estrategia</p>
+          </div>
+          <div class="topic-card">
+            <h4>Dinero y emociones</h4>
+            <p>Rompe el silencio y habla abiertamente de finanzas</p>
+          </div>
+          <div class="topic-card">
+            <h4>Tecnología y finanzas</h4>
+            <p>Digitalízate con propósito y aprovecha las herramientas</p>
+          </div>
+          <div class="topic-card">
+            <h4>Retiro y futuro</h4>
+            <p>Planea la vida tranquila que mereces</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px">
+          <p>
+            <strong
+              >🎧 Aquí no hay temas prohibidos. Solo conversaciones reales que
+              te acercan a una vida financiera más libre y con
+              propósito.</strong
+            >
+          </p>
+          <a href="#" class="btn-primary" style="margin-top: 20px"
+            >Explora todos los temas</a
+          >
+        </div>
+      </div>
     </section>
 
     <!-- Bitcoin Cafe Section -->
     <section class="section bitcoin-cafe" id="bitcoin-cafe">
-        <div class="container">
-            <h2>☕ Tu Pase al Club Cripto de #DineroInteligente</h2>
-            <p class="subtitle">¿Quieres aprender de cripto sin humo ni miedo?</p>
-            <p><strong>Entonces esto es solo para quienes piensan diferente.</strong></p>
-            
-            <p>En alianza con Bitcoin Café Venezuela, creamos una experiencia exclusiva para nuestra comunidad: un espacio donde las finanzas digitales se entienden con café en mano, comunidad real y educación sin tecnicismos.</p>
-            
-            <div class="exclusive-code">
-                <h3>🎟️ Acceso exclusivo con el código</h3>
-                <div class="code">#DINEROINTELIGENTE</div>
-                <p>Este es tu pase directo al círculo del presente y futuro de la economía.</p>
-            </div>
-            
-            <p><em>Importante: Los cursos, mentorías y programas educativos son ofrecidos por Fintech 4.0, iniciativa de los socios de Bitcoin Café. Nosotras los recomendamos con total confianza, pero no los dictamos directamente.</em></p>
-            
-            <div class="cafe-features">
-                <div class="cafe-feature">
-                    <h4>✅ Cursos presenciales y próximamente digitales</h4>
-                </div>
-                <div class="cafe-feature">
-                    <h4>✅ Asesorías con expertos en cripto y finanzas personales</h4>
-                </div>
-                <div class="cafe-feature">
-                    <h4>✅ Eventos privados en la sede Bitcoin Café Caracas</h4>
-                </div>
-                <div class="cafe-feature">
-                    <h4>✅ Comunidad educativa en expansión</h4>
-                </div>
-            </div>
-            
-            <p><strong>🚀 Esto no es para cualquiera. Es para #LosQueSíHablanDeDinero y toman decisiones con visión.</strong></p>
-            
-            <div style="text-align: center; margin: 30px 0;">
-                <h3>🏰 Da tu primer paso hoy:</h3>
-                <div class="hero-buttons" style="justify-content: center;">
-                    <a href="#" class="btn-primary">Ver cursos de Bitcoin Café</a>
-                    <a href="#" class="btn-secondary">Escuchar el episodio con Carmen Salvador</a>
-                    <a href="#" class="btn-primary">Únete con el código exclusivo</a>
-                </div>
-            </div>
-            
-            <div class="cafe-quote">
-                <div class="quote-text">"Aquí no solo servimos café, servimos educación financiera real."</div>
-                <div class="quote-author">— Carmen Salvador, Cofundadora de Bitcoin Café</div>
-            </div>
+      <div class="container">
+        <h2>☕ Tu Pase al Club Cripto de #DineroInteligente</h2>
+        <p class="subtitle">
+          El siguiente paso para quienes ya protegen su futuro y ahora quieren
+          multiplicarlo.
+        </p>
+        <p>
+          <strong
+            >Si ya tienes tu protección familiar, jubilación y fondo de
+            emergencia, es momento de dar el siguiente paso: hacer crecer tu
+            patrimonio.</strong
+          >
+        </p>
+
+        <p>
+          En Dinero Inteligente nos aliamos con Bitcoin Café Venezuela para
+          darte acceso al Club Cripto, una experiencia creada para quienes
+          piensan diferente: 📍 Un lugar donde entender las finanzas digitales
+          es tan natural como tomar un buen café. 🤝 Comunidad real, educación
+          sin tecnicismos y oportunidades para invertir con confianza.
+        </p>
+
+        <p>
+          🚀 Beneficios exclusivos con el código DINEROINTELIGENTE: ✅ Cursos
+          presenciales y próximamente online (por Fintech 4.0, socios de Bitcoin
+          Café) ✅ Mentorías con expertos en cripto y finanzas personales ✅
+          Eventos privados en la sede Bitcoin Café Caracas ✅ Comunidad
+          educativa en expansión
+        </p>
+
+        <div class="exclusive-code">
+          <h3>🎟️ Acceso exclusivo con el código</h3>
+          <div class="code">#DINEROINTELIGENTE</div>
+          <p>
+            Este es tu pase directo al círculo del presente y futuro de la
+            economía.
+          </p>
         </div>
+
+        <p>
+          <em
+            >⚠️ Importante: Recomendamos con total confianza los cursos y mentorías, pero no los dictamos directamente.</em
+          >
+        </p>
+
+        <div class="cafe-features">
+          <div class="cafe-feature">
+            <h4>✅ Cursos presenciales y próximamente digitales</h4>
+          </div>
+          <div class="cafe-feature">
+            <h4>✅ Asesorías con expertos en cripto y finanzas personales</h4>
+          </div>
+          <div class="cafe-feature">
+            <h4>✅ Eventos privados en la sede Bitcoin Café Caracas</h4>
+          </div>
+          <div class="cafe-feature">
+            <h4>✅ Comunidad educativa en expansión</h4>
+          </div>
+        </div>
+
+        <p>
+          <strong
+            >🚀 Esto no es para cualquiera. Es para #LosQueSíHablanDeDinero y
+            toman decisiones con visión.</strong
+          >
+        </p>
+
+        <div style="text-align: center; margin: 30px 0">
+          <h3>🏰 Da tu primer paso hoy:</h3>
+          <div class="hero-buttons" style="justify-content: center">
+            <a href="#" class="btn-secondary">Ver cursos de Bitcoin Café</a>
+            <a href="#" class="btn-primary"
+              >Escuchar el episodio con Carmen Salvador</a
+            >
+            <a href="#" class="btn-secondary">Únete con el código exclusivo</a>
+          </div>
+        </div>
+
+        <div class="cafe-quote">
+          <div class="quote-text">
+            "Aquí no solo servimos café, servimos educación financiera real."
+          </div>
+          <div class="quote-author">
+            — Carmen Salvador, Cofundadora de Bitcoin Café
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Collaboration Section -->
     <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>🤝 Colabora con nosotras</h2>
-                <p>¿Tienes una marca con propósito o una historia poderosa?<br>
-                ¿Quieres unirte a la comunidad de #LosQueSíHablanDeDinero?</p>
-            </div>
-            
-            <div style="text-align: center;">
-                <p><strong>📬 Escríbenos si deseas:</strong></p>
-                <div class="features-grid" style="margin: 30px 0;">
-                    <div class="feature-item">
-                        <h4>Patrocinar un episodio</h4>
-                        <p>Llega a nuestra audiencia comprometida con su crecimiento financiero</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Ser invitado al podcast</h4>
-                        <p>Comparte tu experiencia y conocimiento con nuestra comunidad</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Colaborar con nuestra comunidad</h4>
-                        <p>Únete a iniciativas que generen impacto real</p>
-                    </div>
-                </div>
-                
-                <div class="hero-buttons" style="justify-content: center;">
-                    <a href="#" class="btn-primary">Formulario de contacto</a>
-                    <a href="#" class="btn-secondary">Enviar mensaje directo</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>🤝 Colabora con nosotras</h2>
+          <p>
+            ¿Tienes una marca con propósito o una historia poderosa?<br />
+            ¿Quieres unirte a la comunidad de #LosQueSíHablanDeDinero?
+          </p>
         </div>
+
+        <div style="text-align: center">
+          <p><strong>📬 Escríbenos si deseas:</strong></p>
+          <div class="features-grid" style="margin: 30px 0">
+            <div class="feature-item">
+              <h4>Patrocinar un episodio</h4>
+              <p>
+                Llega a nuestra audiencia comprometida con su crecimiento
+                financiero
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Ser invitado al podcast</h4>
+              <p>
+                Comparte tu experiencia y conocimiento con nuestra comunidad
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Colaborar con nuestra comunidad</h4>
+              <p>Únete a iniciativas que generen impacto real</p>
+            </div>
+          </div>
+
+          <div class="hero-buttons" style="justify-content: center">
+            <a href="#" class="btn-secondary">Formulario de contacto</a>
+            <a href="#" class="btn-primary">Enviar mensaje directo</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Social Links Section -->
     <section class="section social-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>📲 Escúchanos y síguenos</h2>
-                <p>Únete al movimiento #LosQueSíHablanDeDinero</p>
-            </div>
-            
-            <div class="social-links">
-                <a href="#">🔊 Spotify</a>
-                <a href="#">📺 YouTube</a>
-                <a href="#">📲 @planificaconcarla</a>
-                <a href="#">📲 @tuplanificadorafinanciera</a>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <p style="font-size: 1.2rem; font-weight: 700; color: var(--primary-green);">
-                    🎯 Únete al movimiento #LosQueSíHablanDeDinero
-                </p>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>📲 Escúchanos y síguenos</h2>
+          <p>Únete al movimiento #LosQueSíHablanDeDinero</p>
         </div>
+
+        <div class="social-links">
+          <a href="#">🔊 Spotify</a>
+          <a href="#">📺 YouTube</a>
+          <a href="#">📲 @planificaconcarla</a>
+          <a href="#">📲 @tuplanificadorafinanciera</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px">
+          <p
+            style="
+              font-size: 1.2rem;
+              font-weight: 700;
+              color: var(--primary-green);
+            "
+          >
+            🎯 Únete al movimiento #LosQueSíHablanDeDinero
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Newsletter Section -->
     <section class="section newsletter">
-        <div class="container">
-            <h2>No te pierdas ningún consejo financiero</h2>
-            <p>Suscríbete y recibe contenido exclusivo sobre finanzas personales</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Tu email aquí" required>
-                <button type="submit">💰 Suscribirse</button>
-            </form>
-            <p style="font-size: 14px; margin-top: 20px; opacity: 0.8;">
-                Sin spam. Solo contenido de valor para tu crecimiento financiero.
-            </p>
-        </div>
+      <div class="container">
+        <h2>No te pierdas ningún consejo financiero</h2>
+        <p>Suscríbete y recibe contenido exclusivo sobre finanzas personales</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Tu email aquí" required />
+          <button type="submit">💰 Suscribirse</button>
+        </form>
+        <p style="font-size: 14px; margin-top: 20px; opacity: 0.8">
+          Sin spam. Solo contenido de valor para tu crecimiento financiero.
+        </p>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Dinero Inteligente</h4>
-                    <p>La comunidad que sí habla de dinero. Educación financiera real, sin tabúes y con propósito.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces</h4>
-                    <a href="#inicio">Inicio</a>
-                    <a href="#episodios">Episodios</a>
-                    <a href="#anfitrionas">Anfitrionas</a>
-                    <a href="#bitcoin-cafe">Bitcoin Café</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Plataformas</h4>
-                    <a href="#">Spotify</a>
-                    <a href="#">Apple Podcasts</a>
-                    <a href="#">Google Podcasts</a>
-                    <a href="#">YouTube</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <a href="mailto:info@dinerointeligente.com">info@dinerointeligente.com</a>
-                    <a href="#">Agenda tu asesoría</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Dinero Inteligente. Todos los derechos reservados.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Dinero Inteligente</h4>
+            <p>
+              La comunidad que sí habla de dinero. Educación financiera real,
+              sin tabúes y con propósito.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Enlaces</h4>
+            <a href="#inicio">Inicio</a>
+            <a href="#episodios">Episodios</a>
+            <a href="#anfitrionas">Anfitrionas</a>
+            <a href="#bitcoin-cafe">Bitcoin Café</a>
+          </div>
+          <div class="footer-section">
+            <h4>Plataformas</h4>
+            <a href="#">Spotify</a>
+            <a href="#">Apple Podcasts</a>
+            <a href="#">Google Podcasts</a>
+            <a href="#">YouTube</a>
+          </div>
+          <div class="footer-section">
+            <h4>Contacto</h4>
+            <a href="mailto:info@dinerointeligente.com"
+              >info@dinerointeligente.com</a
+            >
+            <a href="#">Agenda tu asesoría</a>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Dinero Inteligente. Todos los derechos reservados.</p>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

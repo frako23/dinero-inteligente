@@ -1,0 +1,683 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-green: #53bc0f;
+  --dark-green: #1b3d07;
+  --primary-purple: #63338c;
+  --light-purple: #d8a0ff;
+  --dorado-suave: #f4b942;
+  --dorado-intenso: #e0a72d;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --dark-gray: #2b2b2b;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+  color: var(--dark-gray);
+  background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid var(--primary-green);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(45, 27, 105, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-family: "Open Sans", cursive;
+  font-size: 24px;
+  color: var(--primary-purple);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primary-purple);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-green);
+}
+
+.cta-button {
+  background: linear-gradient(45deg, var(--primary-green), var(--dark-green));
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(124, 179, 66, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 179, 66, 0.4);
+}
+
+/* Hero Section */
+.hero {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 50%, #f0f4ff 100%);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent-yellow);
+  color: var(--primary-purple);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.2rem;
+  color: var(--primary-purple);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero .highlight {
+  color: var(--primary-green);
+  position: relative;
+}
+
+.hero .community-tag {
+  color: var(--light-purple);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: var(--dorado-intenso);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(124, 179, 66, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-purple);
+  padding: 15px 30px;
+  border: 2px solid var(--primary-purple);
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--dorado-suave);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(124, 179, 66, 0.4);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-purple);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.platform-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.platform-links a {
+  color: var(--primary-purple);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.platform-links a:hover {
+  color: var(--primary-green);
+}
+
+.hero-image {
+  position: relative;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(45, 27, 105, 0.2);
+}
+
+/* Section Styles */
+.section {
+  padding: 80px 0;
+}
+
+.section-white {
+  background: white;
+}
+
+.section-light {
+  background: linear-gradient(135deg, #f8fffe 0%, #f0f8e8 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: var(--primary-purple);
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* What is Dinero Inteligente */
+.what-is {
+  text-align: center;
+}
+
+.what-is h2 {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: var(--primary-purple);
+  margin-bottom: 30px;
+}
+
+.what-is .subtitle {
+  font-size: 1.3rem;
+  color: var(--primary-green);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.what-is p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.feature-item {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(45, 27, 105, 0.1);
+  text-align: left;
+}
+
+.feature-item h4 {
+  color: var(--primary-green);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Purpose Section */
+.purpose {
+  background: linear-gradient(
+    45deg,
+    var(--primary-purple),
+    var(--light-purple)
+  );
+  color: white;
+  text-align: center;
+}
+
+.purpose h2 {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.purpose p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.purpose .highlight-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+  margin: 30px 0;
+}
+
+/* Hosts Section */
+.hosts {
+  text-align: center;
+}
+
+.hosts-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hosts h2 {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: var(--primary-purple);
+  margin-bottom: 20px;
+}
+
+.hosts-names {
+  font-size: 1.5rem;
+  color: var(--primary-green);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hosts p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* Topics Section */
+.topics {
+  background: white;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.topic-card {
+  background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 5px solid var(--primary-green);
+  transition: transform 0.3s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-5px);
+}
+
+.topic-card h4 {
+  color: var(--primary-purple);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.topic-card p {
+  color: var(--dark-gray);
+}
+
+/* Bitcoin Cafe Section */
+.bitcoin-cafe {
+  background: linear-gradient(135deg, var(--accent-yellow) 0%, #ffd54f 100%);
+  color: var(--primary-purple);
+}
+
+.bitcoin-cafe h2 {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.bitcoin-cafe .subtitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.bitcoin-cafe p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.exclusive-code {
+  background: var(--primary-purple);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.exclusive-code h3 {
+  font-family: "Open Sans", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.code {
+  background: var(--accent-yellow);
+  color: var(--primary-purple);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.cafe-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.cafe-feature {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cafe-quote {
+  background: var(--primary-purple);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px 0;
+  text-align: center;
+  font-style: italic;
+}
+
+.cafe-quote .quote-text {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.cafe-quote .quote-author {
+  font-weight: 700;
+  color: var(--accent-yellow);
+}
+
+/* Newsletter Section */
+.newsletter {
+  background: linear-gradient(45deg, var(--primary-green), var(--dark-green));
+  color: white;
+  text-align: center;
+}
+
+.newsletter h2 {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.newsletter p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 250px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+}
+
+.newsletter-form button {
+  background: var(--primary-purple);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: var(--light-purple);
+}
+
+/* Social Links */
+.social-section {
+  background: white;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.social-links a {
+  color: var(--primary-purple);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-green);
+}
+
+/* Footer */
+footer {
+  background: var(--primary-purple);
+  color: white;
+  padding: 60px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h4 {
+  font-family: "Open Sans", cursive;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--accent-yellow);
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--primary-green);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cafe-features {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter-form input {
+    min-width: 100%;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
