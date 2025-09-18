@@ -585,7 +585,7 @@ nav {
 }
 
 .social-links a {
-  color: var(--primary-purple);
+  color: var(--light-gray);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -593,7 +593,7 @@ nav {
 }
 
 .social-links a:hover {
-  color: var(--primary-green);
+  color: var(--dorado-suave);
 }
 
 /* Footer */
