@@ -712,20 +712,6 @@ footer {
   height: 100px;
 }
 
-.beneficios {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: max-content;
-  margin: 0 auto;
-  padding: 40px;
-}
-
-.beneficios h3 {
-  font-family: "Luckiest Guy", cursive;
-  font-size: 28px;
-}
-
 /* Disclaimer Section (Cláusula de Exención de Responsabilidad) */
 /* Disclaimer dentro del Footer */
 .footer-disclaimer {
