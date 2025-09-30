@@ -617,7 +617,7 @@ nav {
 }
 
 .social-links a:hover {
-  color: var(--dorado-suave);
+  color: var(--dark-green);
 }
 
 /* Footer */
@@ -738,5 +738,5 @@ footer {
   ); /* Usamos el dorado para destacar la advertencia legal */
   font-weight: 700;
   display: block;
-   margin-bottom: 5px;
+  margin-bottom: 5px;
 }
