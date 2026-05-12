@@ -1,546 +1,797 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Dinero Inteligente - Podcast de finanzas sin tabúes | Carla y Kesling
-    </title>
-    <meta
-      name="description"
-      content="Únete a la comunidad que sí habla de dinero. Escucha el podcast Dinero Inteligente, aprende sobre cripto con Bitcoin Café y transforma tu relación con el dinero."
-    />
-    <link rel="stylesheet" href="public/styles/styles.css" />
+<!doctype html>
 
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container": "#f0eded",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffe16e",
+                        "on-error": "#ffffff",
+                        surface: "#fcf9f8",
+                        "on-surface-variant": "#4a4455",
+                        background: "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary-fixed": "#eaddff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#67fe9a",
+                        "on-tertiary-container": "#4c3f00",
+                        tertiary: "#705d00",
+                        "surface-container-highest": "#e5e2e1",
+                        secondary: "#006d36",
+                        primary: "#6f2de1",
+                        "inverse-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "tertiary-container": "#c7a927",
+                        "surface-variant": "#e5e2e1",
+                        "primary-fixed-dim": "#d1bcff",
+                        "secondary-fixed-dim": "#45e180",
+                        "inverse-primary": "#d1bcff",
+                        "on-primary-container": "#fffbff",
+                        "primary-container": "#884efb",
+                        "surface-dim": "#dcd9d9",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#5800c8",
+                        "surface-tint": "#7131e3",
+                        "outline-variant": "#ccc3d8",
+                        "on-primary-fixed": "#24005b",
+                        "on-background": "#1c1b1b",
+                        "tertiary-fixed-dim": "#e4c542",
+                        "secondary-container": "#64fb97",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-container-low": "#f6f3f2",
+                        error: "#ba1a1a",
+                        "surface-bright": "#fcf9f8",
+                        "on-secondary-container": "#007239",
+                        outline: "#7b7487",
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                    spacing: {
+                        lg: "40px",
+                        xs: "4px",
+                        md: "24px",
+                        sm: "12px",
+                        base: "8px",
+                        xl: "64px",
+                    },
+                    fontFamily: {
+                        "headline-md": ["Luckiest Guy"],
+                        "headline-xl": ["Luckiest Guy"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { lineHeight: "1.2", fontWeight: "400" }],
+                        "headline-xl": [
+                            "48px",
+                            {
+                                lineHeight: "1.1",
+                                letterSpacing: "0.02em",
+                                fontWeight: "400",
+                            },
+                        ],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "label-bold": ["14px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "500" }],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                "FILL" 0,
+                "wght" 400,
+                "GRAD" 0,
+                "opsz" 24;
+            vertical-align: middle;
+        }
 
-    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <nav class="container">
-        <div class="logo">
-          <a href="#" class="logo-text"
-            ><img
-              src="public/images/2-removebg-preview.png"
-              alt="Dinero Inteligente Logo"
-          /></a>
+        .comic-shadow {
+            box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+        }
+
+        .comic-shadow-sm {
+            box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+        }
+
+        .comic-border {
+            border: 3px solid black;
+        }
+
+        .comic-border-lg {
+            border: 4px solid black;
+        }
+
+        .hover-lift:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+        }
+
+        .hover-lift:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-surface font-body-md text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+    <!-- TopNavBar -->
+    <header
+        class="flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50 bg-white dark:bg-zinc-900 border-b-[4px] border-black dark:border-zinc-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <div
+            class="text-2xl font-black italic text-[#8C52FF] dark:text-[#A87BFF] drop-shadow-sm uppercase tracking-wider">
+            Dinero Inteligente
         </div>
-        <ul class="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li>
-            <a href="https://www.youtube.com/@Dinero_Inteligente2024"
-              >Episodios</a
-            >
-          </li>
-          <li><a href="#anfitrionas">Anfitrionas</a></li>
-          <li>
-            <a href="#bitcoin-cafe" style="display: flex; gap: 0.25rem; align-items: center;"
-              ><i class="lni lni-coffee-cup-2" style="font-size: 30px;"></i></i> Bitcoin
-              Café</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://calendly.com/dinerointeligenteclkg/30min"
-              class="cta-button"
-              style="color: white"
-              >Agenda Asesoría</a
-            >
-          </li>
-        </ul>
-      </nav>
+        <nav class="hidden md:flex gap-8 items-center">
+            <a class="font-black uppercase tracking-wider text-lg text-[#00BF63] dark:text-[#00E676] underline decoration-[3px] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+                href="#">Podcast</a>
+            <a class="font-black uppercase tracking-wider text-lg text-black dark:text-white hover:text-[#00BF63] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+                href="#">YouTube</a>
+            <a class="font-black uppercase tracking-wider text-lg text-black dark:text-white hover:text-[#00BF63] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+                href="#">Diagnóstico</a>
+        </nav>
+        <button
+            class="comic-border comic-shadow-sm bg-[#8C52FF] text-white px-6 py-2 font-black uppercase tracking-widest active:scale-95 duration-100 hover:rotate-1">
+            ¡Suscríbete!
+        </button>
     </header>
+    <main>
+        <!-- BLOQUE 1: HERO PRINCIPAL -->
+        <section class="relative overflow-hidden bg-white px-6 py-20 md:py-32 border-b-4 border-black">
+            <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1 space-y-8 z-10">
+                    <div class="inline-block bg-tertiary-fixed comic-border px-4 py-1 rotate-[-2deg] comic-shadow-sm">
+                        <span class="font-headline-md text-headline-md text-on-tertiary-fixed uppercase">¡Oye,
+                            tú!</span>
+                    </div>
+                    <h1 class="font-headline-xl text-headline-xl text-primary leading-none uppercase">
+                        No tienes que elegir entre
+                        <span class="bg-secondary-container comic-border inline-block px-4 -rotate-1">disfrutar
+                            hoy</span>
+                        o proteger tu mañana.
+                    </h1>
+                    <p class="font-body-xl text-body-xl text-2xl max-w-xl border-l-4 border-primary pl-4 py-2">
+                        El podcast donde el dinero se deja de organizar… y se empieza a
+                        diseñar.
+                    </p>
+                    <div class="flex flex-wrap gap-6">
+                        <a class="comic-border comic-shadow bg-secondary text-white font-headline-md text-xl px-8 py-4 hover-lift uppercase tracking-wider flex items-center gap-2"
+                            href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823&nd=1&dlsi=97de7e723ea6454b"
+                            target="_blank" rel="noreferrer">
+                            <span class="material-symbols-outlined">podcasts</span> EMPEZAR
+                            A ESCUCHAR EN SPOTIFY
+                        </a>
+                        <a class="comic-border comic-shadow bg-white text-black font-headline-md text-xl px-8 py-4 hover-lift uppercase tracking-wider flex items-center gap-2"
+                            href="https://www.youtube.com/watch?v=BBf9CxYBIPw&list=PLbK5qfUeY-PV5o1m5kDGdhZ8yoaV_ENGI&pp=sAgC"
+                            target="_blank" rel="noreferrer">
+                            <span class="material-symbols-outlined">play_circle</span> VER
+                            EN YOUTUBE
+                        </a>
+                    </div>
+                </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <!-- <div class="hero-badge">
-              Tu relación con el dinero está a punto de cambiar
+                <div class=" relative">
+                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-primary-fixed rounded-full blur-3xl opacity-30">
+                    </div>
+                    <div class="relative comic-border-lg comic-shadow bg-white p-4 rotate-3 overflow-hidden">
+                        <img alt="Dollar character" class="w-auto h-auto"
+                            data-alt="A vibrant digital illustration of a charismatic cartoon dollar bill character wearing thick black square glasses and holding a classic silver studio microphone. The character has expressive white gloved hands and is winking at the camera. The background is a bright pop-art style yellow with purple comic-style radial sunburst lines. The overall mood is high-energy, fun, and modern financial education."
+                            src="public/logo sin fondo.png" />
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-[#00BF63] comic-border p-4 comic-shadow -rotate-6">
+                        <span class="font-headline-md text-white">ESTO ES DINERO INTELIGENTE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center items-center mt-12 z-10">
+                <span class="font-body-xl mt-8 text-body-xl text-3xl">
+                    Si prefieres una guía paso a paso, comienza con nuestra playlist
+                    <a href="https://www.youtube.com/watch?v=jzFzg0c-wAs&list=PLbK5qfUeY-PXhqapciEhdDP_npy6Yq48Z&pp=sAgC"
+                        class="text-primary underline" target="_blank" rel="noreferrer">“Empieza aquí”</a>.
+                    </>
+            </div>
+        </section>
+        <!-- BLOQUE 2: FILOSOFÍA CENTRAL -->
+        <section class="py-20 bg-primary-fixed-dim border-b-4 border-black">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-headline-xl text-headline-xl mb-12 uppercase">
+                    La riqueza real no es elegir.
+                </h2>
+                <p class="font-headline-md text-headline-md text-primary max-w-3xl mx-auto mb-16">
+                    Es diseñar para sostener ambas cosas.
+                </p>
+                <div class=" max-w-4xl mx-auto">
+                    <div
+                        class="bg-white comic-border comic-shadow p-8 text-left hover-lift -rotate-2 w-fit mx-auto text-4xl">
+                        <!-- <span class="material-symbols-outlined text-error text-5xl mb-4"
+                >warning</span
+              > -->
+                        <h3 class="font-headline-md text-4xl text-headline-xl mb-4 text-on-surface uppercase">
+                            No creemos en extremos.
+                        </h3>
+
+                        <span>Ni en “vive solo el presente”.</span>
+                        <hr />
+                        <span>Ni en “sacrifica todo por el futuro”.</span>
+                        <!-- <hr class="my-4 border-t-2 border-primary w-16 mx-left" /> -->
+                        <hr />
+
+                        <span>Creemos en mentalidad de expansión con estructura.</span>
+                        <hr />
+                        <span>Porque disfrutar hoy es valioso.</span>
+                        <hr />
+                        <span>Pero que ese disfrute no tenga fecha de vencimiento… eso es estrategia.</span>
+                        <hr />
+                        <span>
+
+                            Porque la tranquilidad financiera no es emocional.</span>
+                        <hr />
+                        Es estructural.
+                    </div>
+                    <!-- <div
+              class="bg-secondary-container comic-border comic-shadow p-8 text-left hover-lift rotate-2"
+            >
+              <span
+                class="material-symbols-outlined text-secondary text-5xl mb-4"
+                >bolt</span
+              >
+              <h3
+                class="font-headline-md text-headline-md mb-4 text-on-secondary-container uppercase"
+              >
+                La Estrategia
+              </h3>
+              <p class="font-body-lg text-body-lg">
+                Diseñar un sistema financiero que te permita disfrutar del café
+                de hoy mientras construyes el patrimonio de tus sueños.
+              </p>
             </div> -->
-            <h1>
-              Rompe el silencio financiero
-              <span class="highlight">y empieza tu libertad</span>
-            </h1>
-            <span class="community-tag"
-              >Bienvenido a la comunidad de #LosQueSíHablanDeDinero</span
-            >
-            <p>
-              Sin tabúes, sin fórmulas mágicas y sin miedo. Carla y Kesling te
-              acompañan en el camino hacia una libertad financiera real: la que
-              se construye paso a paso, desde donde estás.
-            </p>
-            <div class="platform-links">
-              <span>Escúchanos en</span>
-              <a
-                href="https://open.spotify.com/episode/7Ej23CXEd7QUWNCn39BcjO?si=7vyIc6-7RnSXkHZ7hjvx9A"
-                >Spotify</a
-              >
-              <span>|</span>
-              <span>Míranos en</span>
-              <a
-                href="https://youtube.com/@dinero_inteligente2024?si=TaHLepjV87g_SDdP"
-                >YouTube</a
-              >
+                </div>
             </div>
-            <div class="hero-buttons">
-              <a
-                href="https://youtube.com/playlist?list=PLbK5qfUeY-PVJSMEzlDYV1OpNfh_NnXoF&si=njQid-sz2jK9xbQ7"
-                class="btn-primary"
-                >Ver Episodios</a
-              >
-              <a
-                href="https://calendly.com/dinerointeligenteclkg/30min"
-                class="btn-primary"
-                >Agenda una asesoría</a
-              >
+        </section>
+        <!-- BLOQUE 3: QUÉ ENCONTRARÁS AQUI -->
+        <section class="py-24 bg-white border-b-4 border-black">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div class="">
+                        <h2 class="font-headline-xl text-headline-xl text-on-surface uppercase mb-4">
+                            Más que educación financiera.
+                        </h2>
+                        <p class="font-body-xl text-body-xl text-2xl">
+                            No son solo números. Es el mapa para navegar tu mundo financiero
+                            sin perder la cabeza.
+                        </p>
+                    </div>
+                    <div class="hidden md:block">
+                        <span
+                            class="material-symbols-outlined text-8xl text-primary animate-bounce">arrow_downward</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Cards -->
+                    <div
+                        class="bg-tertiary-fixed comic-border comic-shadow p-8 hover-lift flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-white rounded-full comic-border flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl">psychology</span>
+                        </div>
+                        <h4 class="font-headline-xl text-headline-xl mb-8 uppercase">
+                            Mentalidad Financiera
+                        </h4>
+                        <p class="font-body-xl text-body-xl text-2xl">
+                            Creencias, identidad y decisiones que sostienen riqueza.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-secondary-fixed comic-border comic-shadow p-8 hover-lift flex flex-col items-center text-center rotate-1">
+                        <div class="w-16 h-16 bg-white rounded-full comic-border flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl">trending_up</span>
+                        </div>
+                        <h4 class="font-headline-xl text-headline-xl mb-2 uppercase">
+                            Inversión con Propósito
+                        </h4>
+                        <p class="font-body-xl text-body-xl text-2xl">
+                            Criptomonedas, negocios, activos y oportunidades con criterio.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-primary-fixed comic-border comic-shadow p-8 hover-lift flex flex-col items-center text-center -rotate-1">
+                        <div class="w-16 h-16 bg-white rounded-full comic-border flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl">shield</span>
+                        </div>
+                        <h4 class="font-headline-xl text-headline-xl mb-2 uppercase">
+                            Protección y Continuidad
+                        </h4>
+                        <p class="font-body-xl text-body-xl text-2xl">
+                            Estructura patrimonial, planificación y larga vida.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-surface-container-highest comic-border comic-shadow p-8 hover-lift flex flex-col items-center text-center rotate-2">
+                        <div class="w-16 h-16 bg-white rounded-full comic-border flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl">tune</span>
+                        </div>
+                        <h4 class="font-headline-xl text-headline-xl mb-8 uppercase">
+                            Optimización Estratégica
+                        </h4>
+                        <p class="font-body-xl text-body-xl text-2xl">
+                            Impuestos, planificación inteligente y eficiencia financiera.
+                        </p>
+                    </div>
+                </div>
+                <div class="font-body-xl text-[1.8rem] text-body-xl text-center mt-16">
+                    Cada episodio responde a una sola pregunta:
+                    <span class="font-bold">¿Esto fortalece o debilita la estructura que sostiene tu vida?</span>
+
+                </div>
             </div>
-          </div>
-          <div class="hero-image">
-            <img src="public/images/1.jpg" alt="Dinero Inteligente Podcast" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- What is Dinero Inteligente -->
-    <section class="section section-white">
-      <div class="container">
-        <div class="what-is">
-          <h2>¿Qué es Dinero Inteligente?</h2>
-          <p class="subtitle">Dinero Inteligente no es solo un podcast.</p>
-          <p>Es el punto de encuentro de #LosQueSíHablanDeDinero.</p>
-          <p>
-            Es una herramienta educativa, una guía emocional y una comunidad en
-            expansión que te ayuda a tomar decisiones claras con tu dinero, sin
-            culpa ni complicaciones.
-          </p>
-
-          <div class="features-grid">
-            <div class="feature-item">
-              <h4>Conversaciones reales sobre dinero</h4>
-              <p>
-                Sin filtros ni juicios, hablamos de lo que realmente importa
-              </p>
+        </section>
+        <!-- BLOQUE 4: PARA QUIÉN ES -->
+        <section class="py-24 bg-on-surface text-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="comic-border-lg comic-shadow bg-primary-container p-4 rotate-[-3deg]">
+                    <img alt="Community" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500"
+                        data-alt="A diverse group of energetic young adults in a stylized comic book aesthetic, sitting around a professional podcast studio setup. They are wearing trendy glasses and casual clothing, holding colorful coffee mugs. The room is filled with soundproofing panels that are neon green and purple. The lighting is warm and invites a sense of community and intellectual curiosity."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa_BkQHvnbsXArNhAjW6l60nu0krNl2TMXaBN4BLoNUOEl7ICRFdcWujnZeYZyXn-8lXhXf9JM-9sQpfXUGRllMe3oX6ZqkTNrnvC1Cgz0E6eq3c8JUQBp7FzpYsW3fAS5sEVsAmU2WPc4O4eV1ldjIQqRQKT-aJ0gnVfFgoqpnZ70Him6cpv3yxX1KdENrawvIcuZ9yYJHQtJuw4iYARi9-0L8bB1aIWpMsICeYgnrqup7_KOzCA8DoIU0McyVk_lRVTfb1Dmku6I" />
+                </div>
+                <div class="space-y-8">
+                    <h2 class="font-headline-xl text-headline-xl uppercase text-secondary-fixed">
+                        Este podcast es para ti si...
+                    </h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4 group">
+                            <span
+                                class="material-symbols-outlined text-secondary-fixed text-4xl group-hover:scale-125 transition-transform"
+                                style="font-variation-settings: &quot;FILL&quot; 1">check_circle</span>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                Ya generas ingresos y quieres hacerlos sostenibles en el tiempo.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <span
+                                class="material-symbols-outlined text-secondary-fixed text-4xl group-hover:scale-125 transition-transform"
+                                style="font-variation-settings: &quot;FILL&quot; 1">check_circle</span>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                Estás construyendo patrimonio o quieres empezar a estructurarlo.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <span
+                                class="material-symbols-outlined text-secondary-fixed text-4xl group-hover:scale-125 transition-transform"
+                                style="font-variation-settings: &quot;FILL&quot; 1">check_circle</span>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                Te interesa invertir con criterio, no por tendencia.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <span
+                                class="material-symbols-outlined text-secondary-fixed text-4xl group-hover:scale-125 transition-transform"
+                                style="font-variation-settings: &quot;FILL&quot; 1">check_circle</span>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                No quieres improvisar tu futuro.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <span
+                                class="material-symbols-outlined text-secondary-fixed text-4xl group-hover:scale-125 transition-transform"
+                                style="font-variation-settings: &quot;FILL&quot; 1">check_circle</span>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                Buscas disfrutar tu presente sin comprometer tu tranquilidad futura.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="feature-item">
-              <h4>Herramientas prácticas</h4>
-              <p>Para organizar, ahorrar, proteger e invertir tu dinero</p>
+            <div class="font-body-xl text-body-xl text-4xl text-center mt-16 text-white">
+                Este espacio no es para quienes están empezando desde cero.
+                <hr class="border-0 mt-4" />
+                Es para quienes ya entendieron que sin estructura, no hay libertad real.
             </div>
-            <div class="feature-item">
-              <h4>Invitados que inspiran</h4>
-              <p>Expertos que suman valor y comparten experiencias reales</p>
+        </section>
+        <!-- BLOQUE 5: DIFERENCIACIÓN -->
+        <section class="py-24 bg-white border-y-4 border-black">
+            <div class="container mx-auto px-6">
+                <h2 class="font-headline-xl text-headline-xl text-center mb-16 uppercase">
+                    ¿Por qué Dinero Inteligente es diferente?
+                </h2>
+                <p class="font-body-xl text-body-xl text-3xl text-center mb-16">En Dinero Inteligente no hablamos de
+                    dinero desde
+                    el ruido ni desde fórmulas genéricas.
+                    Lo abordamos con una mirada más profunda: mentalidad, expansión y estructura para diseñar una vida
+                    financiera que se sostenga en el tiempo.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Column 1 -->
+                    <div class="space-y-10 mt-10">
+                        <div class="bg-white comic-border comic-shadow-sm p-6 hover-lift border-t-8 border-t-primary">
+                            <h5 class="font-headline-xl text-headline-xl mb-2 uppercase">
+                                Sin fórmulas mágicas
+                            </h5>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                No creemos en atajos ni en soluciones universales para todo el mundo.
+                            </p>
+                        </div>
+                        <div class="bg-white comic-border comic-shadow-sm p-6 hover-lift border-t-8 border-t-secondary">
+                            <h5 class="font-headline-xl text-headline-xl mb-2 uppercase">
+                                Pensamiento Estratégico
+                            </h5>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                No compartimos tips aislados. Enseñamos a pensar mejor antes de decidir.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="space-y-10">
+                        <div class="bg-white comic-border comic-shadow-sm p-6 hover-lift border-t-8 border-t-tertiary">
+                            <h5 class="font-headline-xl text-headline-xl mb-2 uppercase">
+                                Mentalidad con estructura
+                            </h5>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                La transformación financiera no empieza solo en los números, sino en cómo piensas el
+                                dinero.
+                            </p>
+                        </div>
+                        <div class="bg-white comic-border comic-shadow-sm p-6 hover-lift border-t-8 border-t-error">
+                            <h5 class="font-headline-xl text-headline-xl mb-2 uppercase">
+                                Expansión con criterio
+                            </h5>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                Hablar de crecimiento también implica saber qué sí construir y qué no.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Column 3 -->
+                    <div class="space-y-10 mt-10">
+                        <div
+                            class="bg-white comic-border comic-shadow-sm p-6 hover-lift border-t-8 border-t-secondary-fixed-dim">
+                            <h5 class="font-headline-xl text-headline-xl mb-2 uppercase">
+                                Libertad sostenible
+                            </h5>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                La libertad no se improvisa. Se construye con intención y con una estructura real.
+                            </p>
+                        </div>
+                        <div
+                            class="bg-white comic-border comic-shadow-sm p-6 hover-lift border-t-8 border-t-primary-fixed">
+                            <h5 class="font-headline-xl text-headline-xl mb-2 uppercase">
+                                Vida completa, no solo dinero
+                            </h5>
+                            <p class="font-body-xl text-body-xl text-2xl">
+                                No enseñamos a manejar dinero. Diseñamos cómo sostener una vida completa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-16">
+                    <span class="font-body-xl text-body-xl text-2xl">
+                        Este espacio no es para quienes están empezando desde cero.
+                        <hr class="border-0 mt-4" />
+                        Es para quienes ya entendieron que sin estructura, no hay libertad real.
+                        <hr class="border-0 mt-4" />
+                        Si sabes que este es tu siguiente nivel:
+                    </span>
+                    <div class="hidden md:block mt-10">
+                        <span
+                            class="material-symbols-outlined text-8xl text-primary animate-bounce">arrow_downward</span>
+                    </div>
+                    <button
+                        class="comic-border w-fit text-2xl comic-shadow-sm bg-[#8C52FF] text-white px-6 py-2 font-black uppercase tracking-widest active:scale-95 duration-100 hover:rotate-1">
+                        Hacer diagnóstico de arquitectura financiera
+                    </button>
+
+                </div>
             </div>
-            <div class="feature-item">
-              <h4>Acompañamiento profesional</h4>
-              <p>Con asesoría real y personalizada para tu situación</p>
+        </section>
+        <!-- BLOQUE 6: AUTORIDAD -->
+        <section class="py-24 bg-surface-container-low overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2 space-y-8">
+                        <h2 class="font-headline-xl text-headline-xl uppercase leading-none">
+                            Carla Loyo y Kesling García
+                            Abogadas y Arquitectas Financieras
+                        </h2>
+                        <p class="font-body-xl text-body-xl text-2xl">
+                            Especializadas en diseño estructural de patrimonio, protección y planificación financiera en
+                            LATAM y Europa.
+                        </p>
+                        <div class="bg-white comic-border comic-shadow p-6 relative">
+                            <!-- <div
+                                class="absolute -top-4 -right-4 bg-tertiary-fixed comic-border px-3 py-1 font-headline-md text-sm rotate-6">
+                                DÚO DINÁMICO
+                            </div> -->
+                            <span class="italic font-body-xl text-body-xl text-2xl">
+                                Trabajamos con personas que ya generan ingresos
+                                y necesitan convertir ese ingreso en estructura, protección y continuidad.
+                                <hr class="border-0 mt-4" />
+                                Combinamos claridad, estrategia y experiencia real
+                                para ayudarte a tomar decisiones que sostengan tu vida en el largo plazo.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="comic-border comic-shadow bg-primary overflow-hidden rotate-2">
+                                <img alt="Carla Loyo" class="w-full h-full object-cover" loading="lazy"
+                                    data-alt="A professional portrait of Carla Loyo in a modern, illustrative style. She is smiling confidently, wearing a stylish blazer over a graphic tee. The background features hand-drawn financial icons like upward arrows and lightbulbs in vibrant purple and neon green. The overall style is sophisticated yet accessible and comic-inspired."
+                                    src="public/FotoCarla.avif" />
+                            </div>
+                            <div class="text-center font-headline-md uppercase">
+                                Carla Loyo
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-12">
+                            <div class="comic-border comic-shadow bg-secondary overflow-hidden -rotate-2">
+                                <img alt="Retrato profesional de Kesling García en estilo cómic, sonriendo y señalando al espectador"
+                                    class="w-full h-full object-cover"
+                                    data-alt="A professional portrait of Kesling García in a high-energy comic book style. She has an enthusiastic expression and is pointing towards the viewer. She is wearing modern urban professional attire. The background is a bright secondary green with white comic action lines. Her personality radiates strategic thinking and accessibility."
+                                    src="public/FotoKesling.avif" />
+                            </div>
+                            <div class="text-center font-headline-md uppercase">
+                                Kesling García
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <p>
-            <strong
-              >Publicamos 2 episodios al mes llenos de contenido práctico,
-              humano y accionable.</strong
-            >
-          </p>
-          <a
-            href="https://youtube.com/playlist?list=PLbK5qfUeY-PVd1XSPA1Ux8jRBN6Svf_XW&si=RAMFBdjrbDWEwZkN"
-            class="btn-primary"
-            style="margin-top: 30px"
-            >Empieza a escucharnos</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- Purpose Section -->
-    <section class="section purpose">
-      <div class="container">
-        <h2>Nuestro Propósito</h2>
-        <p>Queremos que pierdas el miedo a ver tus números.</p>
-        <p>Queremos que hablar de dinero deje de ser un tabú.</p>
-        <p>
-          Y queremos que te sientas parte de una comunidad que entiende que
-          planificar no es un lujo, es una estrategia para quienes quieren
-          construir bienestar sin renunciar al presente.
-        </p>
-
-        <div class="highlight-text">
-          Nuestro objetivo es ayudarte a pasar del caos financiero a la
-          claridad.
-        </div>
-
-        <p><strong>Piensa diferente. Piensa en Dinero Inteligente.</strong></p>
-        <p><strong>Súmate a #LosQueSíHablanDeDinero</strong></p>
-      </div>
-    </section>
-
-    <!-- Hosts Section -->
-    <section class="section section-light" id="anfitrionas">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hosts">
-            <h2>Conoce a tus Anfitrionas</h2>
-            <div class="hosts-content">
-              <div class="hosts-names">Carla Loyo y Kesling García</div>
-              <p>
-                Abogadas, asesoras financieras y fundadoras de esta comunidad
-                que educa, inspira y transforma.
-              </p>
-              <p>
-                • Creadoras del ecosistema @PlanificaconCarla_ y
-                @TuPlanificadorafinanciera
-              </p>
-              <p>
-                • Desarrollan una app de finanzas personales para acompañarte
-                con tecnología
-              </p>
-              <p>• Voceras de la protección financiera con propósito</p>
-              <a
-                href="https://calendly.com/dinerointeligenteclkg/30min"
-                class="btn-primary"
-                style="margin-top: 30px"
-                >Agenda tu asesoría personalizada</a
-              >
+        </section>
+        <!-- BLOQUE 7: PRIMER PASO -->
+        <section class="py-24 bg-white border-y-4 border-black relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <span class="material-symbols-outlined text-[300px]">analytics</span>
             </div>
-          </div>
-          <div class="hero-image">
-            <img
-              src="public/images/image1.png"
-              alt="Dinero Inteligente Podcast"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="font-headline-xl text-headline-xl mb-6 uppercase text-2xl">
+                    Evalúa tu estructura financiera
+                </h2>
+                <div class="mb-6">
+                    <span class="font-body-xl text-body-xl mb-10 text-2xl">
+                        Antes de diseñar libertad, necesitas entender si tu dinero realmente la sostiene.</span>
+                    <hr class="my-3 border-t-4 border-primary w-16 mx-auto" />
+                    <span class="font-body-xl text-body-xl mb-10 text-2xl">
+                        Hemos creado un diagnóstico para ayudarte a identificar si tienes una estructura financiera
+                        sólida…
+                        <hr class="border-0 mt-4" />
+                        o si estás operando desde la improvisación.
+                    </span>
 
-    <!-- Topics Section -->
-    <section class="section topics">
-      <div class="container">
-        <div class="section-header">
-          <h2>¿De qué hablamos?</h2>
-          <p>
-            En Dinero Inteligente respondemos lo que tú realmente quieres
-            preguntar sobre dinero. Sin filtros. Sin juicios. Sin fórmulas
-            mágicas.
-          </p>
-        </div>
+                    <hr class="my-3 border-t-4 border-primary w-16 mx-auto" />
+                    <span class="font-body-xl text-body-xl mb-10 text-2xl font-bold">Porque no puedes diseñar lo que no
+                        ves.</span>
 
-        <div class="topics-grid">
-          <div class="topic-card">
-            <h4>Mentalidad financiera</h4>
-            <p>Libérate de la culpa y transforma tu relación con el dinero</p>
-          </div>
-          <div class="topic-card">
-            <h4>Ingresos pasivos</h4>
-            <p>Gana más sin perder tu vida ni tu tiempo</p>
-          </div>
-          <div class="topic-card">
-            <h4>Inteligencia financiera</h4>
-            <p>Ahorra e invierte con confianza y estrategia</p>
-          </div>
-          <div class="topic-card">
-            <h4>Dinero y emociones</h4>
-            <p>Rompe el silencio y habla abiertamente de finanzas</p>
-          </div>
-          <div class="topic-card">
-            <h4>Tecnología y finanzas</h4>
-            <p>Digitalízate con propósito y aprovecha las herramientas</p>
-          </div>
-          <div class="topic-card">
-            <h4>Retiro y futuro</h4>
-            <p>Planea la vida tranquila que mereces</p>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px">
-          <p>
-            <strong
-              >Aquí no hay temas prohibidos. Solo conversaciones reales que te
-              acercan a una vida financiera más libre y con propósito.</strong
-            >
-          </p>
-          <a
-            href="https://youtube.com/playlist?list=PLbK5qfUeY-PVEL7GuB9lH-tkxxaVdaO5h&si=g7J80QcXD1t5puRi"
-            class="btn-primary"
-            style="margin-top: 20px"
-            >Explora todos los temas</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- Bitcoin Cafe Section -->
-    <section class="section bitcoin-cafe" id="bitcoin-cafe">
-      <div class="container">
-        <div class="btc-kfe">
-          <h2>Tú Pase al Club Cripto de #DineroInteligente</h2>
-          <img
-            src="./public/images/bitcoincafe logo.png"
-            alt="logo bitcoin cafe"
-          />
-        </div>
-        <p class="subtitle">
-          El siguiente paso para quienes ya protegen su futuro y ahora quieren
-          multiplicarlo.
-        </p>
-        <p>
-          <strong
-            >Si ya tienes tu protección familiar, jubilación y fondo de
-            emergencia, es momento de dar el siguiente paso: hacer crecer tu
-            patrimonio.</strong
-          >
-        </p>
-
-        <p>
-          En Dinero Inteligente nos aliamos con Bitcoin Café Venezuela para
-          darte acceso al Club Cripto, una experiencia creada para quienes
-          piensan diferente: Un lugar donde entender las finanzas digitales es
-          tan natural como tomar un buen café. Comunidad real, educación sin
-          tecnicismos y oportunidades para invertir con confianza.
-        </p>
-
-        <div class="exclusive-code">
-          <h3>
-            Únete desde Caracas o próximamente desde cualquier parte del mundo.
-          </h3>
-          <!-- <div class="code">#DINEROINTELIGENTE</div> -->
-          <p>
-            Solo para #LosQueSíHablanDeDinero y toman decisiones con visión.
-          </p>
-          <p>
-            Conoce más en nuestro perfil o busca @bitcoincafevzla
-            #EducacionFinanciera #BitcoinCafe #DineroInteligente #ClubCripto
-            #FinanzasSinTabu
-          </p>
-        </div>
-
-        <p>
-          <em
-            >⚠️ Importante: Recomendamos con total confianza los cursos y
-            mentorías, pero no los dictamos directamente.</em
-          >
-        </p>
-
-        <div class="cafe-features">
-          <div class="cafe-feature">
-            <h4>Cursos presenciales y próximamente digitales</h4>
-          </div>
-          <div class="cafe-feature">
-            <h4>Asesorías con expertos en cripto y finanzas personales</h4>
-          </div>
-          <div class="cafe-feature">
-            <h4>Eventos privados en la sede Bitcoin Café Caracas</h4>
-          </div>
-          <div class="cafe-feature">
-            <h4>Comunidad educativa en expansión</h4>
-          </div>
-        </div>
-
-        <p>
-          <strong
-            >Esto no es para cualquiera. Es para #LosQueSíHablanDeDinero y toman
-            decisiones con visión.</strong
-          >
-        </p>
-
-        <div style="text-align: center; margin: 30px 0">
-          <h3 style="margin-bottom: 20px">Da tu primer paso hoy:</h3>
-          <div class="hero-buttons" style="justify-content: center">
-            <!-- <a href="https://linktr.ee/BitcoinCafe" class="btn-secondary"
-              >Ver cursos de Bitcoin Café</a
-            > -->
-            <a
-              href="https://www.youtube.com/playlist?list=PLbK5qfUeY-PUYue1FSorFu7APccr1T1xE"
-              class="btn-primary"
-              >Episodios con Expertos Cripto</a
-            >
-            <a href="https://linktr.ee/BitcoinCafe" class="btn-special"
-              >Únete con el código exclusivo</a
-            >
-          </div>
-        </div>
-
-        <!-- <div class="cafe-quote">
-          <div class="quote-text">
-            "Aquí no solo servimos café, servimos educación financiera real."
-          </div>
-          <div class="quote-author">
-            — Carmen Salvador, Cofundadora de Bitcoin Café
-          </div>
-        </div> -->
-      </div>
-    </section>
-
-    <!-- Collaboration Section -->
-    <section class="section section-light">
-      <div class="container">
-        <div class="section-header">
-          <h2>Colabora con nosotras</h2>
-          <p>
-            ¿Tienes una marca con propósito o una historia poderosa?<br />
-            ¿Quieres unirte a la comunidad de #LosQueSíHablanDeDinero?
-          </p>
-        </div>
-
-        <div style="text-align: center">
-          <p><strong>Escríbenos si deseas:</strong></p>
-          <div class="features-grid" style="margin: 30px 0">
-            <div class="feature-item">
-              <h4>Patrocinar un episodio</h4>
-              <p>
-                Llega a nuestra audiencia comprometida con su crecimiento
-                financiero
-              </p>
+                </div>
+                <button
+                    class="bg-[#00BF63] comic-border comic-shadow text-white font-headline-xl text-headline-md px-12 py-6 hover-lift hover:scale-105 transition-all uppercase tracking-widest">
+                    HACER DIAGNÓSTICO AHORA
+                </button>
+                <div
+                    class="mt-16 bg-surface-container-high comic-border p-8 comic-shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 text-left">
+                    <div class="flex-1">
+                        <h4 class="font-headline-xl text-headline-xl uppercase mb-2">
+                            ¿Buscas algo más personalizado?
+                        </h4>
+                        <p class="font-body-xl text-body-xl text-3xl">
+                            Solicita un diagnóstico guiado con nuestro equipo de expertos.
+                        </p>
+                    </div>
+                    <button
+                        class="comic-border bg-white text-black font-headline-xl text-2xl px-8 py-3 hover-lift whitespace-nowrap">
+                        SOLICITAR GUÍA
+                    </button>
+                </div>
             </div>
-            <div class="feature-item">
-              <h4>Ser invitado al podcast</h4>
-              <p>
-                Comparte tu experiencia y conocimiento con nuestra comunidad
-              </p>
+        </section>
+        <!-- CIERRE -->
+        <!-- <section class="py-20 bg-primary text-white border-b-4 border-black text-center">
+            <div class="container mx-auto px-6">
+                <h3 class="font-headline-xl text-headline-xl mb-4 italic uppercase">
+                    "Disfrutar hoy no es irresponsable."
+                </h3>
+                <h3 class="font-headline-xl text-headline-xl text-secondary-fixed uppercase">
+                    "Improvisar mañana sí lo es."
+                </h3>
             </div>
-            <div class="feature-item">
-              <h4>Colaborar con nuestra comunidad</h4>
-              <p>Únete a iniciativas que generen impacto real</p>
+        </section> -->
+        <!-- PODCAST PLAYER FLOATING -->
+        <!-- <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:w-[600px] z-50">
+<div class="bg-gradient-to-r from-primary to-secondary comic-border comic-shadow rounded-full p-2 flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full comic-border flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="text-white font-label-bold truncate">EP #42: ¿Cómo invertir sin miedo al éxito?</div>
+<div class="flex items-center gap-2">
+<div class="h-1.5 flex-1 bg-white/30 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed w-1/3"></div>
+</div>
+<span class="text-[10px] text-white/80 font-mono">12:45 / 45:00</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pr-2">
+<button class="text-white hover:scale-110"><span class="material-symbols-outlined">skip_previous</span></button>
+<button class="text-white hover:scale-110"><span class="material-symbols-outlined">skip_next</span></button>
+</div>
+</div>
+</div> -->
+        <!-- BLOQUE 8 — SIGUIENTE NIVEL -->
+        <section class="py-24 bg-[#00BF63] border-b-4 border-black relative overflow-hidden">
+            <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
+                <h2 class="font-headline-xl text-headline-xl mb-4 uppercase text-black">Ya tienes claridad. Ahora toca
+                    estructurarlo.</h2>
+                <p class="font-headline-md text-headline-md text-white mb-8 uppercase">El diagnóstico te muestra dónde
+                    estás. La estructura define hacia dónde vas.</p>
+                <div class="bg-white comic-border comic-shadow p-8 mb-10 text-left -rotate-1">
+                    <span class="font-body-xl text-body-xl text-2xl text-on-surface mb-6">
+                        Si ya hiciste tu diagnóstico, ahora sabes qué está funcionando… y qué no. 
+                        <hr class="border-0 mt-4" />
+                        Pero entenderlo no cambia tu resultado. 
+                        <hr class="border-0 mt-4" />
+                        La diferencia está en cómo estructuras lo que ya viste.
+                        <hr class="border-0 mt-4" />
+                        Si quieres dejar de improvisar y diseñar una arquitectura financiera real, este es el siguiente paso.
+                        <hr class="border-0 mt-4" />
+                    </span>
+                    <div class="bg-tertiary-fixed comic-border px-6 py-4 rotate-1">
+                        <p class="font-headline-md text-headline-md text-on-tertiary-fixed text-center uppercase">Pasar
+                            de claridad a estructura es lo que convierte intención en resultados.</p>
+                    </div>
+                </div>
+                <button
+                    class="bg-white comic-border comic-shadow text-black font-headline-xl text-2xl px-10 py-5 hover-lift uppercase tracking-wider">
+                    Solicitar diagnóstico guiado
+                </button>
             </div>
-          </div>
-
-          <div class="hero-buttons" style="justify-content: center">
-            <!-- <a href="#" class="btn-secondary">Formulario de contacto</a> -->
-            <a
-              href="https://www.instagram.com/dinerointeligentepodcast/?utm_source=ig_web_button_share_sheet"
-              class="btn-primary"
-              >Enviar mensaje directo</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Social Links Section -->
-    <section class="section newsletter">
-      <div class="container">
-        <div class="section-header">
-          <h2 style="color: #e0a72d">Escúchanos y síguenos</h2>
-          <p style="color: white">
-            Únete al movimiento #LosQueSíHablanDeDinero
-          </p>
-        </div>
-
-        <div class="social-links">
-          <a
-            href="https://open.spotify.com/episode/7Ej23CXEd7QUWNCn39BcjO?si=7vyIc6-7RnSXkHZ7hjvx9A"
-            ><i class="lni lni-spotify" style="font-size: 30px"></i> Spotify</a
-          >
-          <a href="https://www.youtube.com/@Dinero_Inteligente2024"
-            ><i class="lni lni-youtube" style="font-size: 30px"></i> YouTube</a
-          >
-          <a href="https://www.tiktok.com/@dinerointeligentepodcast"
-            ><i class="lni lni-tiktok" style="font-size: 30px"></i> Tik Tok</a
-          >
-          <a href="https://www.instagram.com/dinerointeligentepodcast"
-            ><i class="lni lni-instagram" style="font-size: 30px"></i>
-            @dinerointeligentepodcast</a
-          >
-        </div>
-        <div class="social-links">
-          <a href="https://www.instagram.com/planificaconcarla_/"
-            ><i class="lni lni-instagram" style="font-size: 30px"></i>
-            @planificaconcarla_</a
-          >
-          <a href="https://www.instagram.com/tuplanificadorafinanciera/"
-            ><i class="lni lni-instagram" style="font-size: 30px"></i>
-            @tuplanificadorafinanciera</a
-          >
-        </div>
-        <!-- <div style="text-align: center; margin-top: 40px">
-          <p style="font-size: 1.2rem; font-weight: 700; color: white">
-            Únete al movimiento #LosQueSíHablanDeDinero
-          </p>
-        </div> -->
-      </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <!-- <section class="section newsletter">
-      <div class="container">
-        <h2>No te pierdas ningún consejo financiero</h2>
-        <p>Suscríbete y recibe contenido exclusivo sobre finanzas personales</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Tu email aquí" required />
-          <button type="submit">💰 Suscribirse</button>
-        </form>
-        <p style="font-size: 14px; margin-top: 20px; opacity: 0.8">
-          Sin spam. Solo contenido de valor para tu crecimiento financiero.
-        </p>
-      </div>
-    </section> -->
-
+        </section>
+        <!-- BLOQUE 9 — CIERRE -->
+        <section class="py-24 bg-[#8C52FF] text-white border-b-4 border-black text-center overflow-hidden">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="relative inline-block mb-12">
+                    <span
+                        class="material-symbols-outlined absolute -top-12 -left-12 text-white/20 text-9xl">format_quote</span>
+                    <h2 class="font-headline-xl text-headline-xl uppercase italic leading-tight relative z-10">
+                        "Disfrutar hoy no es irresponsable. <br />
+                        <span class="text-secondary-fixed">Improvisar mañana sí lo es.</span>"
+                    </h2>
+                </div>
+                <p class="font-body-xl text-body-xl text-3xl mb-10  mx-auto">
+                    Si sabes que tu vida necesita más que ingresos… y estás listo/a para construir algo que dure, este
+                    es el siguiente paso.
+                </p>
+                <button
+                    class="bg-secondary comic-border comic-shadow text-white font-headline-xl text-headline-md px-12 py-6 hover-lift uppercase tracking-widest">
+                    ESCUCHAR DINERO INTELIGENTE
+                </button>
+            </div>
+        </section>
+        <!-- BLOQUE 10 — COMUNIDAD -->
+        <section class="py-20 bg-surface border-b-4 border-black text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="font-headline-xl text-headline-xl mb-4 uppercase">Sigue pensando diferente</h2>
+                <p class="font-body-xl text-body-xl text-3xl mb-10  mx-auto">Únete a la comunidad que está aprendiendo a diseñar su dinero
+                    con intención.</p>
+                <div class="flex justify-center flex-wrap gap-6">
+                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group" href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823">
+                        <span
+                            class="material-symbols-outlined text-4xl text-black group-hover:text-primary transition-colors">podcasts</span>
+                        <div class="mt-2 font-label-bold uppercase">Spotify</div>
+                    </a>
+                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group" href="https://www.youtube.com/@Dinero_Inteligente2024">
+                        <span
+                            class="material-symbols-outlined text-4xl text-black group-hover:text-error transition-colors">play_circle</span>
+                        <div class="mt-2 font-label-bold uppercase">YouTube</div>
+                    </a>
+                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group" href="https://www.tiktok.com/@dinero.inteligente">
+                        <span
+                            class="material-symbols-outlined text-4xl text-black group-hover:text-secondary transition-colors">video_library</span>
+                        <div class="mt-2 font-label-bold uppercase">TikTok</div>
+                    </a>
+                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group" href="https://www.instagram.com/dinero.inteligente/">
+                        <span
+                            class="material-symbols-outlined text-4xl text-black group-hover:text-primary-container transition-colors">camera</span>
+                        <div class="mt-2 font-label-bold uppercase">Instagram</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
     <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h4>Dinero Inteligente</h4>
-            <p>
-              La comunidad que sí habla de dinero. Educación financiera real,
-              sin tabúes y con propósito.
-            </p>
-          </div>
-          <div class="footer-section">
-            <h4>Enlaces</h4>
-            <a href="#inicio">Inicio</a>
-            <a href="https://www.youtube.com/@Dinero_Inteligente2024"
-              >Episodios</a
-            >
-            <a href="#anfitrionas">Anfitrionas</a>
-            <a href="#bitcoin-cafe">Bitcoin Café</a>
-          </div>
-          <div class="footer-section">
-            <h4>Plataformas</h4>
-            <a
-              href="https://open.spotify.com/episode/7Ej23CXEd7QUWNCn39BcjO?si=7vyIc6-7RnSXkHZ7hjvx9A"
-              >Spotify</a
-            >
-            <a href="https://www.youtube.com/@Dinero_Inteligente2024"
-              >YouTube</a
-            >
-          </div>
-          <div class="footer-section">
-            <h4>Contacto</h4>
-            <a href="mailto:dinerointeligenteclkg@gmail.com"
-              >dinerointeligenteclkg@gmail.com</a
-            >
-            <a href="https://calendly.com/dinerointeligenteclkg/30min"
-              >Agenda tu asesoría</a
-            >
-          </div>
+    <!-- FOOTER OPTIMIZADO -->
+    <footer class="bg-[#00BF63] dark:bg-zinc-900 border-t-[4px] border-black py-16 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="font-black font-headline-xl text-[2.5rem] uppercase">Dinero Inteligente
+                    </div>
+                    <p class="font-label-bold text-lg text-on-surface">Un espacio donde el dinero se piensa diferente.
+                    </p>
+                    <p class="font-body-md max-w-sm leading-relaxed">
+                        Diseñamos una nueva forma de entender el dinero: con mentalidad, estrategia y estructura para
+                        construir una vida que se sostenga en el tiempo.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="bg-surface-container p-2 comic-border hover:bg-primary-container hover:text-white transition-colors"
+                            href="#"><span class="material-symbols-outlined">mail</span></a>
+                        <a class="bg-surface-container p-2 comic-border hover:bg-secondary transition-colors"
+                            href="#"><span class="material-symbols-outlined">chat</span></a>
+                    </div>
+                </div>
+                <!-- Column 1: Navegación -->
+                <div>
+                    <h4 class="font-headline-xl text-3xl uppercase mb-6 text-white">Navegación</h4>
+                    <ul class="space-y-4 font-bold text-sm">
+                        <li><a class="hover:text-primary hover:underline" href="#">Inicio</a></li>
+                        <li><a class="hover:text-primary hover:underline" href="#">Landing</a></li>
+                        <li><a class="hover:text-primary hover:underline" href="#">Sobre nosotras</a></li>
+                        <li><a class="hover:text-primary hover:underline" href="#">Bio</a></li>
+                    </ul>
+                </div>
+                <!-- Column 2: Recursos -->
+                <div>
+                    <h4 class="font-headline-xl text-3xl uppercase mb-6 ">Recursos</h4>
+                    <ul class="space-y-4 font-bold text-sm">
+                        <li><a class="hover:text-secondary hover:underline" href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823">Podcast</a></li>
+                        <li><a class="hover:text-secondary hover:underline" href="https://www.youtube.com/@Dinero_Inteligente2024">YouTube</a></li>
+                        <li><a class="hover:text-secondary hover:underline" href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823">Spotify</a></li>
+                        <li><a class="hover:text-secondary hover:underline" href="https://www.tiktok.com/@dinero.inteligente">Canal</a></li>
+                        <li><a class="hover:text-secondary hover:underline" href="https://www.youtube.com/watch?v=jzFzg0c-wAs&list=PLbK5qfUeY-PXhqapciEhdDP_npy6Yq48Z&pp=sAgC">Playlist “Empieza aquí”</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Servicios -->
+                <div>
+                    <h4 class="font-headline-md text-smxl text-3xl uppercase mb-6 text-tertiary-fixed">Acompañamiento</h4>
+                    <ul class="space-y-4 font-bold text-sm">
+                        <li><a class="hover:text-tertiary hover:underline" href="#">Arquitectura financiera</a></li>
+                        <li><a class="hover:text-tertiary hover:underline" href="#">Diagnóstico</a></li>
+                        <li><a class="hover:text-tertiary hover:underline" href="#">Evaluar acompañamiento</a></li>
+                        <li><a class="hover:text-tertiary hover:underline" href="#">WhatsApp</a></li>
+                        <li><a class="hover:text-tertiary hover:underline" href="#">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t-2 border-black/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="font-bold text-sm italic">© 2024 Dinero Inteligente. ¡Haz que tu dinero baile!</p>
+                <div class="flex gap-8 font-bold text-xs uppercase tracking-widest">
+                    <a class="hover:underline" href="#">Términos</a>
+                    <a class="hover:underline" href="#">Privacidad</a>
+                </div>
+            </div>
+            <p class="font-body-lg text-body-lg my-10 text-white text-center">El contenido compartido por DINERO
+                INTELIGENTE tiene fines educativos e informativos y no constituye asesoría financiera, legal, fiscal ni
+                recomendación de inversión personalizada.
+                Cada decisión financiera debe evaluarse según el contexto individual de cada persona.
+                No organizamos dinero. Diseñamos libertad.</p>
         </div>
-         
-        <div class="footer-disclaimer">
-                   
-          <p>
-                       
-            <strong
-              >⚠️ Dinero Inteligente es un podcast de educación financiera
-              exclusivamente formativo.</strong
-            >
-                        No brinda asesoría ni recomienda productos financieros;
-            consulta a un profesional antes de tomar cualquier decisión.        
-             
-          </p>
-                 
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 Dinero Inteligente. Todos los derechos reservados.</p>
-        </div>
-      </div>
     </footer>
-  </body>
+
+</body>
+
 </html>
