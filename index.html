@@ -1,44 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dinero Inteligente - Podcast de finanzas sin tabúes | Carla y Kesling</title>
-  <meta name="description" content="Únete a la comunidad que sí habla de dinero. Escucha el podcast Dinero Inteligente, aprende sobre cripto con Bitcoin Café y transforma tu relación con el dinero." />
 
-  <!-- ✅ Open Graph (Facebook, LinkedIn, WhatsApp) -->
-  <meta property="og:title" content="Dinero Inteligente - Podcast de finanzas sin tabúes" />
-  <meta property="og:description" content="Únete a la comunidad que sí habla de dinero. Aprende sobre cripto, finanzas personales y transforma tu relación con el dinero." />
-  <meta property="og:image" content="https://dinerointeligentepodcast.com/public/images/image1.png" />
-  <meta property="og:url" content="https://dinerointeligentepodcast.com/" />
-  <meta property="og:type" content="website" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinero Inteligente - Podcast de finanzas sin tabúes | Carla y Kesling</title>
+    <meta name="description"
+        content="Únete a la comunidad que sí habla de dinero. Escucha el podcast Dinero Inteligente, aprende sobre cripto con Bitcoin Café y transforma tu relación con el dinero." />
 
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dinero Inteligente - Podcast de finanzas sin tabúes" />
-  <meta name="twitter:description" content="Escucha el podcast Dinero Inteligente y transforma tu relación con el dinero." />
-  <meta name="twitter:image" content="https://dinerointeligentepodcast.com/public/images/image1.png" />
-  <meta name="twitter:site" content="@dinerointeligentepodcast" />
+    <!-- ✅ Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:title" content="Dinero Inteligente - Podcast de finanzas sin tabúes" />
+    <meta property="og:description"
+        content="Únete a la comunidad que sí habla de dinero. Aprende sobre cripto, finanzas personales y transforma tu relación con el dinero." />
+    <meta property="og:image" content="https://dinerointeligentepodcast.com/public/images/image1.png" />
+    <meta property="og:url" content="https://dinerointeligentepodcast.com/" />
+    <meta property="og:type" content="website" />
 
-  <!-- ✅ Favicon y logo para navegadores -->
-  <link rel="icon" href="https://dinerointeligentepodcast.com/public/images/image1.png" type="image/png" />
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dinero Inteligente - Podcast de finanzas sin tabúes" />
+    <meta name="twitter:description"
+        content="Escucha el podcast Dinero Inteligente y transforma tu relación con el dinero." />
+    <meta name="twitter:image" content="https://dinerointeligentepodcast.com/public/images/image1.png" />
+    <meta name="twitter:site" content="@dinerointeligentepodcast" />
 
-  <!-- ✅ Estilos y fuentes -->
-  <link rel="stylesheet" href="public/styles/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
+    <!-- ✅ Favicon y logo para navegadores -->
+    <link rel="icon" href="https://dinerointeligentepodcast.com/public/images/image1.png" type="image/png" />
+
+    <!-- ✅ Estilos y fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container": "#f0eded",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffe16e",
+                        "on-error": "#ffffff",
+                        "surface": "#fcf9f8",
+                        "on-surface-variant": "#4a4455",
+                        "background": "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary-fixed": "#eaddff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#67fe9a",
+                        "on-tertiary-container": "#4c3f00",
+                        "tertiary": "#705d00",
+                        "surface-container-highest": "#e5e2e1",
+                        "secondary": "#006d36",
+                        "primary": "#6f2de1",
+                        "inverse-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "tertiary-container": "#c7a927",
+                        "surface-variant": "#e5e2e1",
+                        "primary-fixed-dim": "#d1bcff",
+                        "secondary-fixed-dim": "#45e180",
+                        "inverse-primary": "#d1bcff",
+                        "on-primary-container": "#fffbff",
+                        "primary-container": "#884efb",
+                        "surface-dim": "#dcd9d9",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#5800c8",
+                        "surface-tint": "#7131e3",
+                        "outline-variant": "#ccc3d8",
+                        "on-primary-fixed": "#24005b",
+                        "on-background": "#1c1b1b",
+                        "tertiary-fixed-dim": "#e4c542",
+                        "secondary-container": "#64fb97",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-container-low": "#f6f3f2",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fcf9f8",
+                        "on-secondary-container": "#007239",
+                        "outline": "#7b7487"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "40px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["'Luckiest Guy'", "cursive"],
+                        "headline-xl": ["'Luckiest Guy'", "cursive"],
+                        "body-md": ["'Plus Jakarta Sans'", "sans-serif"],
+                        "label-bold": ["'Plus Jakarta Sans'", "sans-serif"],
+                        "body-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+                        "body-xl": ["'Plus Jakarta Sans'", "sans-serif"] // Agregada
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "body-xl": ["24px", { "lineHeight": "1.4", "fontWeight": "400" }] // Agregada
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .comic-shadow {
+            box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+        }
+
+        .comic-shadow-sm {
+            box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+        }
+
+        .comic-border {
+            border: 3px solid black;
+        }
+
+        .comic-border-lg {
+            border: 4px solid black;
+        }
+
+        .hover-lift:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+        }
+
+        .hover-lift:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+        }
+    </style>
 </head>
 
-  <body>
+<body>
     <!-- Header -->
-    <header>
-      <nav class="container">
-        <div class="logo">
-          <a href="#" class="logo-text"
-            ><img
-              src="public/images/2-removebg-preview.png"
-              alt="Dinero Inteligente Logo"
-          /></a>
+    <header
+        class="flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50 bg-white dark:bg-zinc-900 border-b-[4px] border-black dark:border-zinc-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <div
+            class="text-2xl font-black italic text-[#8C52FF] dark:text-[#A87BFF] drop-shadow-sm uppercase tracking-wider">
+            Dinero Inteligente
         </div>
         <nav class="hidden md:flex gap-8 items-center">
             <a class="font-black uppercase tracking-wider text-lg text-[#00BF63] dark:text-[#00E676] underline decoration-[3px] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
@@ -476,10 +602,11 @@
                         ves.</span>
 
                 </div>
-                <button
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScs9n8Xo7l2mLh0j3Zt5a9v6u8X9y5z7w8x9y0z1a2b3c4d5e6f7g8h9i/viewform?usp=sf_link"
+                    target="_blank" rel="noreferrer"
                     class="bg-[#00BF63] comic-border comic-shadow text-white font-headline-xl text-headline-md px-12 py-6 hover-lift hover:scale-105 transition-all uppercase tracking-widest">
                     HACER DIAGNÓSTICO AHORA
-                </button>
+                </a>
                 <div
                     class="mt-16 bg-surface-container-high comic-border p-8 comic-shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 text-left">
                     <div class="flex-1">
@@ -538,13 +665,14 @@
                     estás. La estructura define hacia dónde vas.</p>
                 <div class="bg-white comic-border comic-shadow p-8 mb-10 text-left -rotate-1">
                     <span class="font-body-xl text-body-xl text-2xl text-on-surface mb-6">
-                        Si ya hiciste tu diagnóstico, ahora sabes qué está funcionando… y qué no. 
+                        Si ya hiciste tu diagnóstico, ahora sabes qué está funcionando… y qué no.
                         <hr class="border-0 mt-4" />
-                        Pero entenderlo no cambia tu resultado. 
+                        Pero entenderlo no cambia tu resultado.
                         <hr class="border-0 mt-4" />
                         La diferencia está en cómo estructuras lo que ya viste.
                         <hr class="border-0 mt-4" />
-                        Si quieres dejar de improvisar y diseñar una arquitectura financiera real, este es el siguiente paso.
+                        Si quieres dejar de improvisar y diseñar una arquitectura financiera real, este es el siguiente
+                        paso.
                         <hr class="border-0 mt-4" />
                     </span>
                     <div class="bg-tertiary-fixed comic-border px-6 py-4 rotate-1">
@@ -583,25 +711,30 @@
         <section class="py-20 bg-surface border-b-4 border-black text-center">
             <div class="container mx-auto px-6">
                 <h2 class="font-headline-xl text-headline-xl mb-4 uppercase">Sigue pensando diferente</h2>
-                <p class="font-body-xl text-body-xl text-3xl mb-10  mx-auto">Únete a la comunidad que está aprendiendo a diseñar su dinero
+                <p class="font-body-xl text-body-xl text-3xl mb-10  mx-auto">Únete a la comunidad que está aprendiendo a
+                    diseñar su dinero
                     con intención.</p>
                 <div class="flex justify-center flex-wrap gap-6">
-                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group" href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823">
+                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group"
+                        href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823">
                         <span
                             class="material-symbols-outlined text-4xl text-black group-hover:text-primary transition-colors">podcasts</span>
                         <div class="mt-2 font-label-bold uppercase">Spotify</div>
                     </a>
-                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group" href="https://www.youtube.com/@Dinero_Inteligente2024">
+                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group"
+                        href="https://www.youtube.com/@Dinero_Inteligente2024">
                         <span
                             class="material-symbols-outlined text-4xl text-black group-hover:text-error transition-colors">play_circle</span>
                         <div class="mt-2 font-label-bold uppercase">YouTube</div>
                     </a>
-                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group" href="https://www.tiktok.com/@dinero.inteligente">
+                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group"
+                        href="https://www.tiktok.com/@dinero.inteligente">
                         <span
                             class="material-symbols-outlined text-4xl text-black group-hover:text-secondary transition-colors">video_library</span>
                         <div class="mt-2 font-label-bold uppercase">TikTok</div>
                     </a>
-                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group" href="https://www.instagram.com/dinero.inteligente/">
+                    <a class="bg-white p-6 comic-border comic-shadow-sm hover-lift group"
+                        href="https://www.instagram.com/dinero.inteligente/">
                         <span
                             class="material-symbols-outlined text-4xl text-black group-hover:text-primary-container transition-colors">camera</span>
                         <div class="mt-2 font-label-bold uppercase">Instagram</div>
@@ -646,16 +779,25 @@
                 <div>
                     <h4 class="font-headline-xl text-3xl uppercase mb-6 ">Recursos</h4>
                     <ul class="space-y-4 font-bold text-sm">
-                        <li><a class="hover:text-secondary hover:underline" href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823">Podcast</a></li>
-                        <li><a class="hover:text-secondary hover:underline" href="https://www.youtube.com/@Dinero_Inteligente2024">YouTube</a></li>
-                        <li><a class="hover:text-secondary hover:underline" href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823">Spotify</a></li>
-                        <li><a class="hover:text-secondary hover:underline" href="https://www.tiktok.com/@dinero.inteligente">Canal</a></li>
-                        <li><a class="hover:text-secondary hover:underline" href="https://www.youtube.com/watch?v=jzFzg0c-wAs&list=PLbK5qfUeY-PXhqapciEhdDP_npy6Yq48Z&pp=sAgC">Playlist “Empieza aquí”</a></li>
+                        <li><a class="hover:text-secondary hover:underline"
+                                href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823">Podcast</a>
+                        </li>
+                        <li><a class="hover:text-secondary hover:underline"
+                                href="https://www.youtube.com/@Dinero_Inteligente2024">YouTube</a></li>
+                        <li><a class="hover:text-secondary hover:underline"
+                                href="https://open.spotify.com/show/6r94upnocFTaHICu5xmiEZ?si=739202b068994823">Spotify</a>
+                        </li>
+                        <li><a class="hover:text-secondary hover:underline"
+                                href="https://www.tiktok.com/@dinero.inteligente">Canal</a></li>
+                        <li><a class="hover:text-secondary hover:underline"
+                                href="https://www.youtube.com/watch?v=jzFzg0c-wAs&list=PLbK5qfUeY-PXhqapciEhdDP_npy6Yq48Z&pp=sAgC">Playlist
+                                “Empieza aquí”</a></li>
                     </ul>
                 </div>
                 <!-- Column 3: Servicios -->
                 <div>
-                    <h4 class="font-headline-md text-smxl text-3xl uppercase mb-6 text-tertiary-fixed">Acompañamiento</h4>
+                    <h4 class="font-headline-md text-smxl text-3xl uppercase mb-6 text-tertiary-fixed">Acompañamiento
+                    </h4>
                     <ul class="space-y-4 font-bold text-sm">
                         <li><a class="hover:text-tertiary hover:underline" href="#">Arquitectura financiera</a></li>
                         <li><a class="hover:text-tertiary hover:underline" href="#">Diagnóstico</a></li>
